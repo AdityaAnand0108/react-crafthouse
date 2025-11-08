@@ -1,6 +1,9 @@
 import {useCallback, useMemo, useState} from 'react'
 import './App.css'
 import CardComponent from "./component/CardComponent.jsx";
+import StudentDetail from "./component/StudentDetail.jsx";
+import StudentContextProvider from "./StudentContext/StudentContextProvider.jsx";
+import StudentList from "./component/StudentList.jsx";
 
 function App() {
     const [count, setCount] = useState(0)
@@ -21,7 +24,9 @@ function App() {
     }), [])
 
     return (
-        <>
+        <StudentContextProvider>
+            < StudentDetail />
+            < StudentList />
             < CardComponent user = {user} handleIncrement = {handleIncrementChild} item = { item } />
             <h1>Aditya Anand Mishra</h1>
             <div className="card">
@@ -29,7 +34,7 @@ function App() {
                     count is {count}
                 </button>
             </div>
-        </>
+        </StudentContextProvider>
     )
 }
 
