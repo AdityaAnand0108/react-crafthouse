@@ -1,14 +1,17 @@
 import React, {memo} from "react";
 
-const CardComponent = ({ title, description, handleIncrement, item}) => {
+const CardComponent = ({ user , handleIncrement, item}) => {
     console.log("Child component Rendered")
     return (
         <div className="max-w-sm bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden m-4 transition-transform duration-200 hover:scale-105 hover:shadow-lg">
 
             <div className="p-5">
-                <h2 className="text-lg font-semibold text-gray-800 mb-2">{title}</h2>
+                <h2 className="text-lg font-semibold text-gray-800 mb-2">{user.name}</h2>
                 <p className="text-gray-600 text-sm mb-4">
-                    {description}
+                    His Age is - {user.age}
+                </p>
+                <p className="text-gray-600 text-sm mb-4">
+                    {user.description}
                 </p>
                 <button
                     onClick={handleIncrement}
