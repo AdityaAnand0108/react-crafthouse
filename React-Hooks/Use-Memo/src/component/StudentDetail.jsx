@@ -1,4 +1,4 @@
-import {memo, useContext, useRef, useState} from "react";
+import {memo, useCallback, useContext, useRef, useState} from "react";
 import {StudentContext} from "../StudentContext/StudentContext.jsx";
 
 function StudentDetail() {
@@ -9,17 +9,20 @@ function StudentDetail() {
 
     const submitRef = useRef(null); // local ref for button
 
-    const handleSubmit = () => {
-        if (!name || !phone || !fav) return; // optional validation
+    const handleSubmit = useCallback(
+        () => {
+            if (!name || !phone || !fav) return; // optional validation
 
-        addStudent({ name, phone, fav }); // send data to context
-        setName("");
-        setPhone("");
-        setFav("");
+            addStudent({ name, phone, fav }); // send data to context
+            setName("");
+            setPhone("");
+            setFav("");
 
-        // ✅ focus the button again
-        submitRef.current.focus();
-    };
+            // ✅ focus the button again
+            submitRef.current.focus();
+        },
+        [name, phone, fav],
+    );
 
     return (
         <div className="max-w-sm bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-6 mx-auto mt-10">
