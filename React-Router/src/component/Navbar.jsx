@@ -16,16 +16,21 @@ function Navbar() {
                         Home
                     </button>
                 </Link>
-
-                <button className="px-4 py-2 rounded-lg bg-gray-50 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600 transition">
-                    Students
-                </button>
-                <button className="px-4 py-2 rounded-lg bg-gray-50 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600 transition">
-                    Add Student
-                </button>
-                <button className="px-4 py-2 rounded-lg bg-gray-50 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600 transition">
-                    About
-                </button>
+                <Link to="/StudentList">
+                    <button className="px-4 py-2 rounded-lg bg-gray-50 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600 transition">
+                        Students
+                    </button>
+                </Link>
+                <Link to="/AddStudent">
+                    <button className="px-4 py-2 rounded-lg bg-gray-50 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600 transition">
+                        Add Student
+                    </button>
+                </Link>
+                <Link to="/About">
+                    <button className="px-4 py-2 rounded-lg bg-gray-50 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600 transition">
+                        About
+                    </button>
+                </Link>
             </div>
 
             {/* Right Avatar Section */}
