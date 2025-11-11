@@ -5,18 +5,21 @@ import Home from "./component/Home.jsx";
 import AddStudent from "./component/AddStudent.jsx";
 import StudentDetails from "./component/StudentDetails.jsx";
 import About from "./component/About.jsx";
+import BgChangerContextProvider from "./context/BgChangerContextProvider.jsx";
 
 function App() {
 
   return (
     <BrowserRouter>
-        < Navbar />
-        < Routes >
-            <Route path = "/Home" element = {< Home />}/>
-            <Route path = "/AddStudent" element = {< AddStudent />}/>
-            <Route path = "/StudentDetails" element = {< StudentDetails />}/>
-            <Route path = "/about" element = {< About />}/>
-        </Routes>
+       < BgChangerContextProvider>
+           < Navbar />
+           < Routes >
+               <Route path = "/Home" element = {< Home />}/>
+               <Route path = "/AddStudent" element = {< AddStudent />}/>
+               <Route path = "/StudentDetails/:studentid" element = {< StudentDetails />}/>
+               <Route path = "/about" element = {< About />}/>
+           </Routes>
+       </BgChangerContextProvider>
     </BrowserRouter>
   )
 }

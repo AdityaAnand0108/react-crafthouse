@@ -1,9 +1,13 @@
 import React from "react";
+import {useParams} from "react-router";
 
 function StudentDetails() {
+    const roll_no = useParams();
+    console.log(roll_no.studentid);
+
     return (
         <div className="pt-24 flex justify-center items-center min-h-screen bg-gray-50">
-            <div className="bg-white shadow-xl rounded-2xl p-10 w-[90%] max-w-3xl">
+            <div className="bg-black shadow-xl rounded-2xl p-10 w-[90%] max-w-3xl">
                 <h2 className="text-3xl font-bold text-blue-600 mb-6">
                     Student Details
                 </h2>
@@ -15,7 +19,7 @@ function StudentDetails() {
                     </div>
                     <div>
                         <h4 className="text-gray-500 text-sm">Student ID</h4>
-                        <p className="text-gray-800 font-semibold">STU12345</p>
+                        <p className="text-gray-800 font-semibold">{roll_no.studentid}</p>
                     </div>
                     <div>
                         <h4 className="text-gray-500 text-sm">Class</h4>
@@ -31,7 +35,7 @@ function StudentDetails() {
                     <button className="px-5 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition">
                         Back to List
                     </button>
-                    <button className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    <button className="px-5 py-2 bg-blue-600 text rounded-lg hover:bg-blue-700 transition">
                         Edit Details
                     </button>
                 </div>
