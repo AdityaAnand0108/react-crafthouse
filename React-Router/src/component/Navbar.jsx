@@ -8,7 +8,8 @@ function Navbar() {
         <nav
             className={`fixed top-0 left-0 w-full shadow-md py-3 px-8 flex items-center justify-between z-50 transition-colors duration-300 ${
                 theme === "white" ? "bg-white text-black" : "bg-black text-white"
-            }`}
+            }`
+        }
             >
             {/* Logo */}
             <h1 className="text-2xl font-extrabold text-blue-600 tracking-wide">
